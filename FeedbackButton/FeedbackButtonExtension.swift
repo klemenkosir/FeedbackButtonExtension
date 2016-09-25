@@ -75,7 +75,7 @@ extension UIButton {
 			}
 			return
 		}
-		if t.force > feedbackThreshold && !didClick {
+		if (feedbackThreshold <= 0 || t.force > feedbackThreshold) && !didClick {
 			feedbackGenerator?.impactOccurred()
 			feedbackGenerator?.prepare()
 			didClick = true
